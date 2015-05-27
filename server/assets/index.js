@@ -44,6 +44,26 @@ exports.register = function(server, options, next){
         },
         {
             method: 'GET',
+            path: '/font/{path*}',
+            config: {
+                handler: {
+                    directory: { path: './public/font' }
+                },
+                id: 'font'
+            }
+        },
+        {
+            method: 'GET',
+            path: '/lang/{path*}',
+            config: {
+                handler: {
+                    directory: { path: './public/lang' }
+                },
+                id: 'lang'
+            }
+        },
+        {
+            method: 'GET',
             path: '/bower_components/{path*}',
             config: {
                 handler: {

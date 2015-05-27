@@ -3,11 +3,25 @@
 {% block title %}{{title}}{% endblock %}
 
 {% block content %}
-    <ul class="menu">
+    <!-- <ul class="menu">
         <li><a href="{{path.index}}">Home</a></li>
         <li><a href="{{path.about}}">About</a></li>
     </ul>
 
     <h1>{{title}}</h1>
     <p>This is the homepage. AKA Index.</p>
+   -->
+
+{% include './partials/navbar.html' %}
+{% include './partials/sidebar_and_feed.html' %}
+
+
+<script>
+$(document).ready(function() {
+  $('[data-toggle=offcanvas]').click(function() {
+    $('.row-offcanvas').toggleClass('active');
+  });
+});
+</script>
+
 {% endblock %}

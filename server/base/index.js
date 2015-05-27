@@ -29,6 +29,20 @@ exports.register = function(server, options, next){
         },
         {
             method: 'GET',
+            path: '/play/{path*}',
+            config: {
+                handler: function(request, reply){
+                  // Render the view with the custom greeting
+                    reply.view('index', {
+                        video: request.params.path,
+                        title: 'Awesome Boilerplate Homepage'
+                    });
+                },
+                id: 'play'
+            }
+        },
+        {
+            method: 'GET',
             path: '/{path*}',
             config: {
                 handler: function(request, reply){
