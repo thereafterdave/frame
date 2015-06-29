@@ -54,6 +54,16 @@ exports.register = function(server, options, next){
         },
         {
             method: 'GET',
+            path: '/fonts/{path*}',
+            config: {
+                handler: {
+                    directory: { path: './public/font' }
+                },
+                id: 'fontsTofont'
+            }
+        },
+        {
+            method: 'GET',
             path: '/lang/{path*}',
             config: {
                 handler: {
